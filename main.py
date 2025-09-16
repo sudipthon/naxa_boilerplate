@@ -1,22 +1,21 @@
-from bson import ObjectId
-from fastapi import HTTPException
 import json
+import os
 import time
 from typing import Optional, Union
+
+import django
 from bson import ObjectId, json_util
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, GetJsonSchemaHandler
 from pydantic.json_schema import JsonSchemaValue
 from pydantic_core import core_schema
 from pymongo import MongoClient
-import os
-
-import django
-
 
 django.setup()
 from django.contrib.auth import get_user_model
+
 from user.models import UserProfile
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
 
 
@@ -85,8 +84,7 @@ def read_root():
     # return {"Hello": "World"}
     users = User.objects.values("username", "email", "id")
     return [
-        {"username": i.get("username"), "email": i.get(
-            "email"), "id": i.get("id")}
+        {"username": i.get("username"), "email": i.get("email"), "id": i.get("id")}
         for i in users
     ]
 
@@ -121,5 +119,3 @@ def test_m():
     # print(database.list_collection_names())
     data_json = json.loads(json_util.dumps(query_data))
     return data_json
-
-

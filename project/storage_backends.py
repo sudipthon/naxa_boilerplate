@@ -1,7 +1,8 @@
-from django.conf import settings
-from storages.backends.s3boto3 import S3Boto3Storage
-from storages.backends.s3boto3 import *
 import os
+
+from django.conf import settings
+from storages.backends.s3boto3 import *
+from storages.backends.s3boto3 import S3Boto3Storage
 
 
 class InternalWriteDjangoDomainReadBaseStorageClass(S3Boto3Storage):

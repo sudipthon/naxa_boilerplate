@@ -1,9 +1,10 @@
-from django.test import TestCase
-from rest_framework.test import APIRequestFactory, APIClient
-from rest_framework import status
-from user.viewsets import UserRegisterViewSet
-from user.models import UserProfile
 from django.contrib.auth.models import User
+from django.test import TestCase
+from rest_framework import status
+from rest_framework.test import APIClient, APIRequestFactory
+
+from user.models import UserProfile
+from user.viewsets import UserRegisterViewSet
 
 
 class UserRegisterViewSetTest(TestCase):

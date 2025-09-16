@@ -217,7 +217,6 @@ CELERY_RESULT_SERIALIZER = "json"
 CELERY_TIMEZONE = "UTC"
 
 
-
 try:
     from project.local_settings import *
 except ImportError:

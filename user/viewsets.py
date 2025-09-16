@@ -7,8 +7,8 @@ from dj_rest_auth.serializers import (
     LoginSerializer,
     TokenSerializer,
 )
-from dj_rest_auth.views import create_token
 from dj_rest_auth.utils import jwt_encode
+from dj_rest_auth.views import create_token
 from django.conf import settings
 from django.contrib.auth import authenticate, get_user_model
 from django.contrib.auth.models import User

@@ -1,15 +1,15 @@
-from django.test import TestCase
 from django.contrib.auth import get_user_model
-from core.models import PlacesCoordinate
 from django.contrib.gis.geos import Point
+from django.test import TestCase
+
+from core.models import PlacesCoordinate
 
 User = get_user_model()
 
 
 class PlacesCoordinateModelTest(TestCase):
     def setUp(self):
-        self.user = User.objects.create_user(
-            username="tester", password="secret")
+        self.user = User.objects.create_user(username="tester", password="secret")
         self.place = PlacesCoordinate.objects.create(
             user=self.user,
             name="Cafe A",

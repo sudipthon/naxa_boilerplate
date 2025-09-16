@@ -1,10 +1,11 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
-from django.utils.http import urlsafe_base64_encode
 from django.utils.encoding import force_bytes
-from user.utils import account_activation_token
+from django.utils.http import urlsafe_base64_encode
 from rest_framework import status
+
+from user.utils import account_activation_token
 
 
 class ResetPasswordTestCase(TestCase):
