@@ -1,8 +1,3 @@
-from django.contrib.gis.geos import Point
-from django.contrib.gis.measure import D
-from django.core.files.storage import default_storage
-
-# from geopy.distance import geodesic
 from rest_framework import viewsets
 
 # Create your views here.
@@ -14,6 +9,11 @@ from rest_framework.mixins import (
     RetrieveModelMixin,
     UpdateModelMixin,
 )
+from django.contrib.gis.geos import Point
+from django.contrib.gis.measure import D
+from django.core.files.storage import default_storage
+
+# from geopy.distance import geodesic
 from rest_framework.permissions import AllowAny, IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 from rest_framework.views import APIView, Response
