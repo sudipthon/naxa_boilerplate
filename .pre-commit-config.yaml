@@ -48,7 +48,7 @@ repos:
       entry: check-shebang-scripts-are-executable
       language: python
       types: [text]
-      stages: [commit, push, manual]
+      stages: [pre-commit, pre-push, manual]
 
     - id: check-json
       name: check json
